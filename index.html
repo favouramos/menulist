@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentino Digital Menu</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: rgb(12, 38, 39);
+        color: white;
+        text-align: center;
+    }
+    header {
+        padding: 15px;
+    }
+    header img {
+        max-width: 120px;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(255,255,255,0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    header img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(255,215,0,0.8);
+    }
+    .menu-image {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        border-bottom: 3px solid white;
+    }
+    h1 {
+        margin-top: 15px;
+        font-size: 28px;
+        color: #f8d210;
+    }
+    .section-select {
+        margin: 15px 0;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: #ffdd59;
+        color: rgb(12, 38, 39);
+        font-weight: bold;
+        cursor: pointer;
+    }
+    section {
+        margin: 20px auto;
+        max-width: 800px;
+        background: rgba(255,255,255,0.05);
+        padding: 15px;
+        border-radius: 10px;
+    }
+    h2 {
+        color: #ffdd59;
+        margin-bottom: 8px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul li {
+        padding: 6px;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    ul li:last-child {
+        border-bottom: none;
+    }
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 22px;
+        }
+        ul li {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<!-- Add this to your <style> section -->
+<style>
+    /* Existing styles stay the same */
+
+    /* Home button styles */
+    .home-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ffdd59;
+        color: rgb(12, 38, 39);
+        border: none;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    .home-btn:hover {
+        background-color: #f8d210;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+</style>
+
+</head>
+<body>
+<!-- Add this button at the very end of <body>, before </body> -->
+<button class="home-btn" onclick="scrollToTop()" title="Go to Top">
+    ⌂
+</button>
+
+<header>
+    <img src="logo.jpg" alt="Restaurant Logo">
+</header>
+
+<img src="food.jpg" alt="Menu Image" class="menu-image">
+
+<h1 id="FOOD">FOOD</h1>
+
+<!-- Dropdown to navigate sections -->
+<select class="section-select" onchange="scrollToSection(this.value)">
+    <option value="">-- Select Menu Section --</option>
+    <option value="FOOD">FOOD</option>
+    <option value="WINES">WINES</option>
+    <option value="COCKTAILS ">COCKTAILS </option>
+</select>
+
+<section id="SOUP">
+    <h2>SOUP</h2>
+    <ul>
+        <li>Egusi</li>
+        <li>Ogbono</li>
+        <li>Afang</li>
+        <li>Vegetable</li>
+    </ul>
+</section>
+
+<section id="PROTEIN">
+    <h2>PROTEIN</h2>
+    <ul>
+        <li>Goat meat</li>
+        <li>Goat assorted</li>
+        <li>Chicken</li>
+        <li>Egg</li>
+    </ul>
+</section>
+
+<section id="EBA">
+    <h2>EBA</h2>
+    <ul>
+        <li>Garri</li>
+        <li>Semo</li>
+    </ul>
+</section>
+
+<section id="RICE">
+    <h2>RICE</h2>
+    <ul>
+        <li>Coconut rice</li>
+        <li>Nigerian Fried Rice</li>
+        <li>Valentino Special Fried Rice</li>
+        <li>Valentino Special Jollof Rice</li>
+        <li>White Rice and Stew</li>
+        <li>White Rice and Pepper Soup</li>
+        <li>White Rice and Egg Sauce</li>
+        <li>White Rice and Chicken Curry Sauce</li>
+    </ul>
+</section>
+
+<section id="ORDER">
+    <h2>ORDER RECIPE</h2>
+    <ul>
+        <li>Jollof Spaghetti</li>
+        <li>Noodles and Egg</li>
+        <li>Potato cheese</li>
+        <li>Yam cheese</li>
+        <li>Boiled yam And Egg Sauce</li>
+        <li>Fried Yam and Egg Sauce</li>
+        <li>Chicken and chips</li>
+        <li>Barbeque Fish</li>
+        <li>Barbeque Chicken</li>
+        <li>Suya</li>
+        <li>Chicken Shawarma</li>
+    </ul>
+</section>
+
+<img src="WINE.jpg" alt="Menu Image" class="menu-image">
+
+<h1 id="WINES">WINES</h1>
+
+
+
+<section id="SOUP">
+    <h2>WINES</h2>
+    <ul>
+        <li>ASCONI</li>
+        <li>BOTTECA</li>
+        <li>CARLO ROSSI</li>
+        <li>FOUR COUSINS</li>
+        <li>SWEET LIPS</li>
+        <li>DROSTY HOF</li>
+    </ul>
+</section>
+
+<section id="PROTEIN">
+    <h2>CHAMPAGNE</h2>
+    <ul>
+        <li>ANDRE BRUT</li>
+        <li>ANDRE ROSE</li>
+        <li>BELARIE ROSE</li>
+        <li>MOET AND CHANDON ROSE</li>
+    </ul>
+</section>
+
+<section id="EBA">
+    <h2>EBA</h2>
+    <ul>
+        <li>Garri</li>
+        <li>Semo</li>
+    </ul>
+</section>
+
+<section id="RICE">
+    <h2>WHISKEY DRINKS</h2>
+    <ul>
+        <li>WILLIAM LAWSON</li>
+        <li>JAMESON BLACK</li>
+        <li>JAMESON GREEN</li>
+        <li>JACK DANIEL</li>
+        <li>MARTEL BLUE SWIFT</li>
+        <li>MARTEL VS</li>
+        <li>SINGLETON 15YRS</li>
+        <li>GLENFIDDICH 15YRS</li>
+        <li>GLENFIDDICH 18YRS</li>
+        <li>GLENFIDDICH 12YRS</li>
+    </ul>
+</section>
+
+<section id="ORDER">
+    <h2>BRANDY</h2>
+    <ul>
+        <li>CAMUS VS</li>
+        <li>CAMUS VSOP</li>
+        <li>HENESSY VS</li>
+        <li>HENESSY XO/li>
+        <li>HENESSY VSOP</li>
+        <li>REMY MARTINS</li>
+    </ul>
+</section>
+
+<section id="ORDER">
+    <h2>MIXERS</h2>
+    <ul>
+        <li>RED BULL</li>
+        <li>BLACK STALLON</li>
+        <li>COKE</li>
+    </ul>
+</section>
+
+<section id="ORDER">
+    <h2>GIN</h2>
+    <ul>
+        <li>SMIROFF VODKA</li>
+        <li>OLECA WHITE</li>
+        <li>OLECA GOLD</li>
+        <li>GORDONS</li>
+        <li>BACARDI WHITE</li>
+    </ul>
+</section>
+
+
+
+<img src="Cocktails.jpg" alt="Menu Image" class="menu-image">
+
+<h1 id="COCKTAILS ">COCKTAILS </h1>
+
+
+
+<section id="SOUP">
+    <h2>COCKTAILS </h2>
+    <ul>
+        <li>LONG ISLAND</li>
+        <li>SEX ON THE BEACH</li>
+        <li>CHAPMAN</li>
+        <li>MOJITO</li>
+        <li>COSMOPOLITAN</li>
+        <li>PINACOLADA</li>
+        <li>SUNRISE</li>
+        <li>WHISKEY SOUR</li>
+        <li>TOM COLLINS</li>
+        <li>HONEY BEE</li>
+        <li>MAGARITA</li>
+        <li>SANGARIA ROSEJ</li>
+    </ul>
+</section>
+
+<section id="PROTEIN">
+    <h2>CHAMPAGNE</h2>
+    <ul>
+        <li>ANDRE BRUT</li>
+        <li>ANDRE ROSE</li>
+        <li>BELARIE ROSE</li>
+        <li>MOET AND CHANDON ROSE</li>
+    </ul>
+</section>
+
+<section id="EBA">
+    <h2>EBA</h2>
+    <ul>
+        <li>Garri</li>
+        <li>Semo</li>
+    </ul>
+</section>
+
+<section id="RICE">
+    <h2>WHISKEY DRINKS</h2>
+    <ul>
+        <li>WILLIAM LAWSON</li>
+        <li>JAMESON BLACK</li>
+        <li>JAMESON GREEN</li>
+        <li>JACK DANIEL</li>
+        <li>MARTEL BLUE SWIFT</li>
+        <li>MARTEL VS</li>
+        <li>SINGLETON 15YRS</li>
+        <li>GLENFIDDICH 15YRS</li>
+        <li>GLENFIDDICH 18YRS</li>
+        <li>GLENFIDDICH 12YRS</li>
+    </ul>
+</section>
+
+<section id="ORDER">
+    <h2>MILKSHAKES AND SMOTHIE </h2>
+    <ul>
+        <li>VANILLA MILKSHAKE </li>
+        <li>BANANA MILK SHAKE</li>
+        <li>SMOOTHIE</li>
+    </ul>
+</section>
+
+
+<!-- Update your <script> section -->
+<script>
+function scrollToSection(id) {
+    if (id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
